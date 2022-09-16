@@ -15,10 +15,8 @@ async function fetchData(value) {
   return fetch(requestURL + value + "&per_page=5").then((data) => {
     data.json().then((response) => {
       const repositories = response.items;
-      console.log(repositories);
       const repFragment = document.createDocumentFragment();
       repositories.forEach((repo) => {
-        console.log(repo);
         const newElem = document.createElement("li");
         newElem.textContent = repo.full_name;
         newElem.addEventListener("click", () => {
@@ -47,7 +45,6 @@ inputChange = debounce(inputChange, 500);
 searchInput.addEventListener("input", inputChange);
 
 function createSelectElement(name, owner, stars, link) {
-  console.log(name, owner, stars);
   const elemFragment = document.createDocumentFragment();
   const newRep = document.createElement("li");
   const repoLink = document.createElement("a");
