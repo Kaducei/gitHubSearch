@@ -130,9 +130,7 @@ li {
 .repos {
   top: 10%;
   overflow: auto;
-
   position: absolute;
-
   height: 70vh;
   width: 100%;
   outline: none;
