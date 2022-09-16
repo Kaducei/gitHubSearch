@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ul[class],
+ol[class] {
+  padding: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+для body */ body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  background: rgb(0, 0, 153);
+  background: linear-gradient(
+    90deg,
+    rgba(219, 216, 216, 0.8071603641456583) 8%,
+    rgba(187, 187, 187, 0.165703781512605) 55%,
+    rgba(204, 199, 199, 0) 92%
+  );
+  height: 100vh;
+  overflow: hidden;
+  transition: 2s;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+}
+button {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+li {
+  list-style: none;
+}
+.wrapper {
+  max-width: 450px;
+  margin: 50px auto;
+  position: relative;
+  height: 100%;
+  z-index: 2;
+}
+.wrapper .search {
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px black;
+}
+.search__input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.search__dropdown {
+  max-height: 280px;
+}
+.search__dropdown li {
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  list-style: none;
+}
+
+.search__dropdown li:hover {
+  background: #efefef;
+}
+.search__dropdown-active li {
+  display: flex;
+}
+.repos {
+  overflow: auto;
+  transform: translateY(-100%);
+  position: absolute;
+  bottom: 0;
+  height: 400px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  box-shadow: 1px 2px 5px black;
+  background-color: white;
+  z-index: -1;
+}
+.repos li {
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  list-style: none;
+  min-height: 50px;
+  border-bottom: 1px solid black;
+  position: relative;
+}
+.repos li:hover {
+  background: #efefef;
+}
+.repos li button {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  background: url(/src/img/cancel.svg);
+  width: 50px;
+  height: 50px;
+}
+.repos li button:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+.cancel {
+  display: none;
+}
