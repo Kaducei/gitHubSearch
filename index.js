@@ -25,7 +25,8 @@ async function fetchData(value) {
           createSelectElement(
             repo.name,
             repo.owner.login,
-            repo.stargazers_count
+            repo.stargazers_count,
+            repo.html_url
           );
           searchDropdown.innerHTML = "";
           searchInput.value = "";
@@ -45,13 +46,18 @@ inputChange = debounce(inputChange, 500);
 
 searchInput.addEventListener("input", inputChange);
 
-function createSelectElement(name, owner, stars) {
+function createSelectElement(name, owner, stars, link) {
   console.log(name, owner, stars);
   const elemFragment = document.createDocumentFragment();
   const newRep = document.createElement("li");
+  const repoLink = document.createElement("a");
+
+  repoLink.setAttribute("href", link);
+  repoLink.setAttribute("target", "_blank");
+  repoLink.textContent = name;
 
   const elemName = document.createElement("h4");
-  elemName.textContent = name;
+  elemName.appendChild(repoLink);
   newRep.appendChild(elemName);
 
   const elemOwner = document.createElement("div");

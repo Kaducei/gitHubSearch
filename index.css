@@ -128,11 +128,12 @@ li {
   display: flex;
 }
 .repos {
+  top: 10%;
   overflow: auto;
-  transform: translateY(-100%);
+
   position: absolute;
-  bottom: 0;
-  height: 400px;
+
+  height: 70vh;
   width: 100%;
   outline: none;
   border-radius: 5px;
@@ -170,4 +171,8 @@ li {
 }
 .cancel {
   display: none;
+}
+a {
+  color: rgb(245, 27, 27);
+  text-decoration: none;
 }
