@@ -70,6 +70,7 @@ function createSelectElement(name, owner, stars, link) {
   deleteButton.addEventListener("click", () => {
     newRepository.onclick = null;
     newRepository.remove();
+    newElement.removeEventListener();
   });
 
   elementFragment.appendChild(newRepository);
