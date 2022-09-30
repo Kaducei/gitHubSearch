@@ -68,9 +68,20 @@ function createSelectElement(name, owner, stars, link) {
   const deleteButton = document.createElement("button");
   newRepository.appendChild(deleteButton);
   deleteButton.addEventListener("click", () => {
-    newRepository.onclick = null;
     newRepository.remove();
-    newElement.removeEventListener();
+    deleteButton.removeEventListener("click", () => {
+      newRepository.remove();
+      deleteButton.removeEventListener("click", () => {
+        newRepository.remove();
+        deleteButton.removeEventListener("click", () => {
+          newRepository.remove();
+          deleteButton.removeEventListener("click", () => {
+            newRepository.remove();
+            deleteButton.removeEventListener("click");
+          });
+        });
+      });
+    });
   });
 
   elementFragment.appendChild(newRepository);
