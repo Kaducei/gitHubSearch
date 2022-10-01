@@ -73,6 +73,6 @@ function createSelectElement(name, owner, stars, link) {
   collection.appendChild(elementFragment);
 }
 function deleteButtonFunc(event) {
-  event.composedPath()[1].removeEventListener("click", deleteButtonFunc);
+  event.composedPath()[0].removeEventListener("click", deleteButtonFunc);
   event.composedPath()[1].remove();
 }
